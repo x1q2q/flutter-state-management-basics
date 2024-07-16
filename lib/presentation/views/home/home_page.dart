@@ -34,6 +34,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           pinned: true,
                           forceElevated: innerBoxIsScrolled,
                           bottom: TabBar(
+                            tabAlignment: TabAlignment.start,
+                            isScrollable: true,
                             tabs: viewModel.tabBar
                                 .map((item) => Tab(child: Text(item['menu'])))
                                 .toList(),

@@ -14,8 +14,10 @@ class HomeView extends StatelessWidget {
           top: false,
           bottom: false,
           child: Builder(builder: (BuildContext context) {
+            String onMenu = viewModel.tabBar[j]['menu'];
+            print('on: $onMenu');
             return CustomScrollView(
-                key: PageStorageKey<String>(viewModel.tabBar[j]['menu']),
+                key: PageStorageKey<String>(onMenu),
                 slivers: <Widget>[
                   SliverOverlapInjector(
                     handle: NestedScrollView.sliverOverlapAbsorberHandleFor(

@@ -6,6 +6,6 @@ class Tab1Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(child: Tab1View());
+    return Padding(padding: EdgeInsets.all(20), child: Tab1View());
   }
 }
