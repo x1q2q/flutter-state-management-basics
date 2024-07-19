@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fire_statex/presentation/widgets/counter_widget.dart';
 import 'package:provider/provider.dart';
-import 'custom_provider.dart';
+import 'package:fire_statex/presentation/viewmodels/custom_viewmodel.dart';
 
 class Tab4View extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<CustomProvider>(context);
+    final provider = Provider.of<CustomViewmodel>(context);
     return Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[

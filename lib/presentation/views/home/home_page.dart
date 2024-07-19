@@ -26,21 +26,18 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 headerSliverBuilder:
                     (BuildContext context, bool innerBoxIsScrolled) {
                   return <Widget>[
-                    SliverOverlapAbsorber(
-                        handle: NestedScrollView.sliverOverlapAbsorberHandleFor(
-                            context),
-                        sliver: SliverAppBar(
-                          title: Text(viewModel.appName),
-                          pinned: true,
-                          forceElevated: innerBoxIsScrolled,
-                          bottom: TabBar(
-                            tabAlignment: TabAlignment.start,
-                            isScrollable: true,
-                            tabs: viewModel.tabBar
-                                .map((item) => Tab(child: Text(item['menu'])))
-                                .toList(),
-                          ),
-                        ))
+                    SliverAppBar(
+                      title: Text(viewModel.appName),
+                      floating: true,
+                      forceElevated: innerBoxIsScrolled,
+                      bottom: TabBar(
+                        tabAlignment: TabAlignment.start,
+                        isScrollable: true,
+                        tabs: viewModel.tabBar
+                            .map((item) => Tab(child: Text(item['menu'])))
+                            .toList(),
+                      ),
+                    )
                   ];
                 },
                 body: HomeView())));

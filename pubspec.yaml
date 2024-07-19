@@ -1,5 +1,5 @@
 name: fire_statex
-description: "A flutter-firebase to state management (stateX)"
+description: "A flutter state management basics"
 publish_to: 'none'
 version: 0.1.0
 
@@ -9,13 +9,25 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  isar: ^3.1.0+1
+  objectbox: ^4.0.1
+  objectbox_flutter_libs: any
   provider: ^6.1.2
-  rxdart: ^0.28.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
+  build_runner: ^2.4.11
+  objectbox_generator: any
 
 flutter:
   uses-material-design: true
+
+objectbox:
+  # Writes objectbox-model.json and objectbox.g.dart to lib/custom (and test/custom).
+  # output_dir: custom
+  # Or optionally specify the lib and test output folder separately.
+  output_dir:
+    lib: data/models
+    test: test/models/

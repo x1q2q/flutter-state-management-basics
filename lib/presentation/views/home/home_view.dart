@@ -16,15 +16,7 @@ class HomeView extends StatelessWidget {
           child: Builder(builder: (BuildContext context) {
             String onMenu = viewModel.tabBar[j]['menu'];
             print('on: $onMenu');
-            return CustomScrollView(
-                key: PageStorageKey<String>(onMenu),
-                slivers: <Widget>[
-                  SliverOverlapInjector(
-                    handle: NestedScrollView.sliverOverlapAbsorberHandleFor(
-                        context),
-                  ),
-                  SliverToBoxAdapter(child: viewModel.tabBar[j]['widget'])
-                ]);
+            return viewModel.tabBar[j]['widget'];
           }));
     }));
   }

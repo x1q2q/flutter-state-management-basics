@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:fire_statex/presentation/views/home/home_page.dart';
 import 'package:fire_statex/presentation/viewmodels/home_viewmodel.dart';
-import 'package:fire_statex/presentation/views/tab4/custom_provider.dart';
+import 'package:fire_statex/presentation/viewmodels/custom_viewmodel.dart';
+import 'package:fire_statex/presentation/viewmodels/objectbox_viewmodel.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (_) => HomeViewmodel()),
-      ChangeNotifierProvider(create: (_) => CustomProvider())
+      ChangeNotifierProvider(create: (_) => CustomViewmodel()),
+      ChangeNotifierProvider(create: (_) => ObjectboxViewmodel())
     ],
     child: const MainApp(),
   ));
