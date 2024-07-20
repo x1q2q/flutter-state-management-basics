@@ -20,28 +20,28 @@ export 'package:objectbox/objectbox.dart'; // so that callers only have to impor
 
 final _entities = <obx_int.ModelEntity>[
   obx_int.ModelEntity(
-      id: const obx_int.IdUid(1, 6359355991194886278),
+      id: const obx_int.IdUid(1, 6728037262419786071),
       name: 'Employee',
-      lastPropertyId: const obx_int.IdUid(4, 7223909749602469952),
+      lastPropertyId: const obx_int.IdUid(4, 2814579114034909025),
       flags: 0,
       properties: <obx_int.ModelProperty>[
         obx_int.ModelProperty(
-            id: const obx_int.IdUid(1, 1449248609386393676),
+            id: const obx_int.IdUid(1, 6275984554075836654),
             name: 'id',
             type: 6,
             flags: 1),
         obx_int.ModelProperty(
-            id: const obx_int.IdUid(2, 8708574556372776395),
+            id: const obx_int.IdUid(2, 1194023414486925793),
             name: 'name',
             type: 9,
             flags: 0),
         obx_int.ModelProperty(
-            id: const obx_int.IdUid(3, 8267112568117424254),
+            id: const obx_int.IdUid(3, 5359528942185054908),
             name: 'jobName',
             type: 9,
             flags: 0),
         obx_int.ModelProperty(
-            id: const obx_int.IdUid(4, 7223909749602469952),
+            id: const obx_int.IdUid(4, 2814579114034909025),
             name: 'birthDate',
             type: 10,
             flags: 0)
@@ -85,7 +85,7 @@ Future<obx.Store> openStore(
 obx_int.ModelDefinition getObjectBoxModel() {
   final model = obx_int.ModelInfo(
       entities: _entities,
-      lastEntityId: const obx_int.IdUid(1, 6359355991194886278),
+      lastEntityId: const obx_int.IdUid(1, 6728037262419786071),
       lastIndexId: const obx_int.IdUid(0, 0),
       lastRelationId: const obx_int.IdUid(0, 0),
       lastSequenceId: const obx_int.IdUid(0, 0),

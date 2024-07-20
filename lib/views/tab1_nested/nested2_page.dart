@@ -5,7 +5,7 @@ class Nested2Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Card(
       margin: EdgeInsets.all(10),
-      child: Center(child: Text('Isar page overview')),
+      child: Center(child: Text('Isar page coming soon')),
     );
   }
 }
