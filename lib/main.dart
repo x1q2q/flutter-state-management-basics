@@ -1,39 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:fire_statex/presentation/views/home/home_page.dart';
-import 'package:fire_statex/presentation/viewmodels/home_viewmodel.dart';
-import 'package:fire_statex/presentation/viewmodels/custom_viewmodel.dart';
-import 'package:fire_statex/presentation/viewmodels/objectbox_viewmodel.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:fire_statex/data/objectbox.dart';
+import 'package:fire_statex/data/repositories/employee_repository.dart';
+import 'package:fire_statex/viewmodels/custom_viewmodel.dart';
+import 'package:fire_statex/viewmodels/home_viewmodel.dart';
+import 'package:fire_statex/viewmodels/objectbox_viewmodel.dart';
+import 'app.dart';
 
 Future<void> main() async {
+  initializeDateFormatting();
   WidgetsFlutterBinding.ensureInitialized();
+  final empBox = await ObjectBox.create();
 
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (_) => HomeViewmodel()),
       ChangeNotifierProvider(create: (_) => CustomViewmodel()),
-      ChangeNotifierProvider(create: (_) => ObjectboxViewmodel())
+      Provider<EmployeeRepository>(
+          create: (_) => EmployeeRepository(empBox.store)),
+      ChangeNotifierProvider<ObjectboxViewmodel>(
+          create: (context) =>
+              ObjectboxViewmodel(context.read<EmployeeRepository>()))
     ],
     child: const MainApp(),
   ));
-}
-
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        useMaterial3: true,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        colorScheme: const ColorScheme.light().copyWith(
-          primary: Colors.purpleAccent,
-          secondary: Colors.lightBlue,
-        ),
-      ),
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
-    );
-  }
 }
